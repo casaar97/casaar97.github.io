@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.0.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Carlos Sánchez Arribas">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Table of Contents    Introducción Instalación de Hugo  Instalación de Hugo en MacOs: Instalación de Hugo en Linux Instalación de Hugo en Ubuntu/Debian  Creación de un proyecto Seleccionar y descargar un tema Subida del proyecto a Github Pages    Introducción En este tutorial vamos a aprender a crear un sitio web con Hugo.
+Hugo es un generador de sitios web estáticos escrito en Go, y es software libre.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/tutorial/creating-a-new-theme/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Carlos Sánchez Arribas">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Carlos Sánchez Arribas">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/tutorial/creating-a-new-theme/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@casaar97">
+  <meta property="twitter:creator" content="@casaar97">
+  
+  <meta property="og:site_name" content="Carlos Sánchez Arribas">
+  <meta property="og:url" content="/tutorial/creating-a-new-theme/">
+  <meta property="og:title" content="Creando un sitio web con Hugo | Carlos Sánchez Arribas">
+  <meta property="og:description" content="Table of Contents    Introducción Instalación de Hugo  Instalación de Hugo en MacOs: Instalación de Hugo en Linux Instalación de Hugo en Ubuntu/Debian  Creación de un proyecto Seleccionar y descargar un tema Subida del proyecto a Github Pages    Introducción En este tutorial vamos a aprender a crear un sitio web con Hugo.
+Hugo es un generador de sitios web estáticos escrito en Go, y es software libre."><meta property="og:image" content="/img/Carlos.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-02-26T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-02-27T19:14:28&#43;01:00">
+  
+
+  
+
+  
+
+  <title>Creando un sitio web con Hugo | Carlos Sánchez Arribas</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/"><img src="/img/home.png" alt="Carlos Sánchez Arribas"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Principal</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#publications">
+            
+            <span>Publicaciones</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorial/">
+            
+            <span>Tutoriales</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Creando un sitio web con Hugo</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2019-02-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-02-27 19:14:28 &#43;0100 CET" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>Feb 27, 2019</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Creando%20un%20sitio%20web%20con%20Hugo&amp;url=%2ftutorial%2fcreating-a-new-theme%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2ftutorial%2fcreating-a-new-theme%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2ftutorial%2fcreating-a-new-theme%2f&amp;title=Creando%20un%20sitio%20web%20con%20Hugo"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2ftutorial%2fcreating-a-new-theme%2f&amp;title=Creando%20un%20sitio%20web%20con%20Hugo"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Creando%20un%20sitio%20web%20con%20Hugo&amp;body=%2ftutorial%2fcreating-a-new-theme%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2>Table of Contents</h2>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introducción"><strong>Introducción</strong></a></li>
+<li><a href="#instalación-de-hugo">Instalación de Hugo</a>
+<ul>
+<li><a href="#instalación-de-hugo-en-macos">Instalación de Hugo en MacOs:</a></li>
+<li><a href="#instalación-de-hugo-en-linux">Instalación de Hugo en Linux</a></li>
+<li><a href="#instalación-de-hugo-en-ubuntu-debian">Instalación de Hugo en Ubuntu/Debian</a></li>
+</ul></li>
+<li><a href="#creación-de-un-proyecto">Creación de un proyecto</a></li>
+<li><a href="#seleccionar-y-descargar-un-tema">Seleccionar y descargar un tema</a></li>
+<li><a href="#subida-del-proyecto-a-github-pages">Subida del proyecto a Github Pages</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+<h2 id="introducción"><strong>Introducción</strong></h2>
+
+<p>En este tutorial vamos a aprender a crear un sitio web con Hugo.</p>
+
+<p>Hugo es un generador de sitios web estáticos escrito en Go, y es software libre.</p>
+
+<p>Los generadores de sitios web estáticos, aunque tienen limitaciones, son muy interesantes por generar sitios muy rápidos y seguros.</p>
+
+<p>El tutorial estará dividido en varias partes para facilitar su comprensión.</p>
+
+<p></b></p>
+
+<h2 id="instalación-de-hugo">Instalación de Hugo</h2>
+
+<p>Para ver otras formas de instalar Hugo visita el siguiente enlace: <a href="https://gohugo.io/getting-started/installing/"> Instalar Hugo</a>.</p>
+
+<h3 id="instalación-de-hugo-en-macos">Instalación de Hugo en MacOs:</h3>
+
+<pre><code>brew update &amp;&amp; brew install hugo
+</code></pre>
+
+<h3 id="instalación-de-hugo-en-linux">Instalación de Hugo en Linux</h3>
+
+<pre><code>snap install hugo
+</code></pre>
+
+<h3 id="instalación-de-hugo-en-ubuntu-debian">Instalación de Hugo en Ubuntu/Debian</h3>
+
+<pre><code>sudo apt-get install hugo
+</code></pre>
+
+<div class="alert alert-note">
+  <div>
+    <p>Se recomienda utilizar snap para instalar Hugo en Ubuntu ya que en caso de utilizar apt-get se instalará la versión 0.40 de Hugo, la cual ya es antigua.</p>
+
+  </div>
+</div>
+
+
+<p>Una vez que hayamos instalado Hugo, es recomendable utilizar el siguiente comando para comprobar que todo ha salido correctamente.</p>
+
+<p>Además obtendremos información sobre la versión de Hugo.</p>
+
+<pre><code>hugo version
+</code></pre>
+
+<h2 id="creación-de-un-proyecto">Creación de un proyecto</h2>
+
+<p>El primer paso es la creación del directorio del proyecto, en nuestro caso lo llamaremos <strong>proyecto</strong>:</p>
+
+<pre><code>hugo new site proyecto
+</code></pre>
+
+<p>Una vez creado el directorio del proyecto, observaremos una serie de directorios en su interior:</p>
+
+<ul>
+<li><strong>archetypes</strong>: Plantillas para la creación de contenido.</li>
+<li><strong>config.toml</strong>: Archivo de configuración del sitio (Puede estar en formato TOML, YAML o JSON).</li>
+<li><strong>content</strong>: Archivos con el contenido ordenado en carpetas que siguen la misma jerarquía que mostrará el contenido en el sitio público. Dicho contenido puede estar en formato Markdown o HTML.</li>
+<li><strong>data</strong>: Contenido adicional para incluir en el sitio web. Esta carpeta contiene archivos en formato TOML, YAML, JSON, incluso CSV, y constituye una especie de base de datos de contenido estructurado y accesible a través de un sistema de objetos y propiedades.</li>
+<li><strong>layouts</strong>: Plantillas en HTML, shortcodes&hellip;</li>
+<li><strong>public</strong>: Contienen el sitio web listo para publicar generado a partir del contenido de /content, los archivos estáticos de /static y según las reglas y las plantillas definidas en el resto de carpetas de Hugo.</li>
+<li><strong>static</strong>: Archivos estáticos como hojas de estilo o imágenes.</li>
+<li><strong>themes</strong>: Temas instalados.</li>
+</ul>
+
+<p>Además, Hugo puede funcionar con git como sistema de control de cambios, de manera que el proyecto completo sea un repositorio.</p>
+
+<p>Para ello una vez creado el sitio se puede crear el repositorio en la carpeta:</p>
+
+<pre><code>git init
+</code></pre>
+
+<h2 id="seleccionar-y-descargar-un-tema">Seleccionar y descargar un tema</h2>
+
+<p>Una vez hemos creado la carpeta de nuestro proyecto, vamos a seleccionar un tema para el mismo.</p>
+
+<p>Los temas se encuentran en la siguiente <a href="https://themes.gohugo.io" target="_blank">página</a>.</p>
+
+<p>En caso de querer descargar todos los temas utilizaremos el siguiente comando:</p>
+
+<pre><code>git clone --depth 1 --recursive https://github.com/gohugoio/hugoThemes.git themes
+</code></pre>
+
+<p>En caso de querer descargar un tema en concreto y una vez localizado el tema que queremos utilizar, usamos el siguiente comando:</p>
+
+<pre><code>cd proyecto
+cd themes
+git clone URL_TEMA
+</code></pre>
+
+<p>Otra opción es añadir el tema como un submódulo de nuestro proyecto:</p>
+
+<pre><code>git init (En caso de no haberlo hecho anteriormente)
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+</code></pre>
+
+<p>En nuestro caso vamos a instalar el tema &ldquo;<a href="https://themes.gohugo.io/minimal-academic/" target="_blank">Minimal Academic</a>&ldquo;</p>
+
+<h2 id="subida-del-proyecto-a-github-pages">Subida del proyecto a Github Pages</h2>
+
+    </div>
+
+    
+
+
+    
+      
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  
+  <img class="portrait mr-3" src="/author/admin/avatar_hu506066110099d86a4d37bc3df3b0e6cd_162590_250x250_fill_lanczos_center_2.png" itemprop="image" alt="Avatar">
+  
+
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/authors/admin">Carlos Sánchez Arribas</a></h5>
+    <h6 class="card-subtitle">Estudiante de Ingeniería Informática</h6>
+    <p class="card-text" itemprop="description">Estudiante del Grado de Ingeniería Informática de la Universidad de Córdoba.</p>
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/#contact" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/casaar97" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/casaar97" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.109caa4f51ff39522c6dfc25fb05b6e9.js"></script>
+
+  </body>
+</html>
+
