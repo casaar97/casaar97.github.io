@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    
+    <url>
+    
+      <loc>/tutorial/creating-a-new-theme/</loc>
+      <lastmod>2019-02-26T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/author/admin/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/author/carlos/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/author/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/</loc>
+      <lastmod>2019-02-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/talk/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tutorial/</loc>
+      <lastmod>2019-02-26T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/admin/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+</urlset>

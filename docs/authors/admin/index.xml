@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>admin on Carlos Sánchez Arribas</title>
+    <link>/authors/admin/</link>
+    <description>Recent content in admin on Carlos Sánchez Arribas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/author/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/author/admin/</guid>
+      <description>Estudiante del Grado de Ingeniería Informática de la Universidad de Córdoba. Especialidad: Software.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/author/carlos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/author/carlos/</guid>
+      <description>Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.</description>
+    </item>
+    
+  </channel>
+</rss>
