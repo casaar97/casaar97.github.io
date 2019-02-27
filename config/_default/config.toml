@@ -28,7 +28,7 @@ disqusShortname = ""
 # Name of Academic theme folder in `themes/`.
 theme = "academic"
 
-publishDir = "docs"
+#publishDir = "docs"
 
 
 # Get last modified date for content from Git?
