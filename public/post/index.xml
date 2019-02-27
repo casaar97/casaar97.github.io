@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Carlos Sánchez Arribas</title>
-    <link>/post/</link>
+    <link>https://casaar97.github.io/post/</link>
     <description>Recent content in Posts on Carlos Sánchez Arribas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Feb 2019 19:14:28 +0100</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://casaar97.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
