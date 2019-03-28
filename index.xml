@@ -11,10 +11,10 @@
     
     <item>
       <title>Creando un sitio web con Hugo</title>
-      <link>https://casaar97.github.io/tutorial/creating-a-new-theme/</link>
+      <link>https://casaar97.github.io/tutorial/creandounsitiowebconhugo/</link>
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://casaar97.github.io/tutorial/creating-a-new-theme/</guid>
+      <guid>https://casaar97.github.io/tutorial/creandounsitiowebconhugo/</guid>
       <description>
 
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
@@ -107,7 +107,8 @@
 
 &lt;p&gt;Para ello una vez creado el sitio se puede crear el repositorio en la carpeta:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git init
+&lt;pre&gt;&lt;code&gt;cd proyecto
+git init
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;seleccionar-y-descargar-un-tema&#34;&gt;Seleccionar y descargar un tema&lt;/h2&gt;
@@ -121,23 +122,130 @@
 &lt;pre&gt;&lt;code&gt;git clone --depth 1 --recursive https://github.com/gohugoio/hugoThemes.git themes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;En caso de querer descargar un tema en concreto y una vez localizado el tema que queremos utilizar, usamos el siguiente comando:&lt;/p&gt;
+&lt;p&gt;En caso de querer descargar un tema en concreto y una vez localizado el tema que queremos utilizar, usamos el comando git clone.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd proyecto
-cd themes
-git clone URL_TEMA
+&lt;p&gt;En nuestro caso vamos a descargar el tema &amp;ldquo;&lt;a href=&#34;https://themes.gohugo.io/hugo-coder/&#34; target=&#34;_blank&#34;&gt;Coder&lt;/a&gt;&amp;rdquo; añadiéndolo como un submódulo a nuestro proyecto:&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;Hay que estar situados dentro del directorio proyecto.&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;pre&gt;&lt;code&gt;cd themes
+git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Otra opción es añadir el tema como un submódulo de nuestro proyecto:&lt;/p&gt;
+&lt;p&gt;Otra opción es clonar el tema:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git init (En caso de no haberlo hecho anteriormente)
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
+git clone https://github.com/jhu247/minimal-academic.git
+echo &#39;theme = &amp;quot;minimal-academic&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;En nuestro caso vamos a instalar el tema &amp;ldquo;&lt;a href=&#34;https://themes.gohugo.io/minimal-academic/&#34; target=&#34;_blank&#34;&gt;Minimal Academic&lt;/a&gt;&amp;ldquo;&lt;/p&gt;
+&lt;p&gt;Las instrucciones para descargar el tema suelen estar en la parte inferior de la página principal del tema, concretamente en la sección &amp;ldquo;Getting started&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Los temas contienen un subdirectorio, llamado &lt;strong&gt;exampleSite&lt;/strong&gt;, con un sitio web de ejemplo realizado con dicho tema, el cual podemos usar de base para realizar nuestro proyecto.&lt;/p&gt;
+
+&lt;p&gt;Para ver su funcionamiento, vamos a copiar los 3 subdirectorios y el fichero de configuración que encontramos en dicho directorio:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;layouts&lt;/li&gt;
+&lt;li&gt;content&lt;/li&gt;
+&lt;li&gt;static&lt;/li&gt;
+&lt;li&gt;config.toml&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Y los vamos a copiar dentro del directorio del proyecto (/proyecto en nuestro caso) reemplazando así los que han sido creados por defecto.&lt;/p&gt;
+
+&lt;p&gt;Una vez hecho esto, ya podemos probar nuestro sitio web de manera local, para ello abrimos una terminal, nos situamos en el directorio del proyecto (/proyecto en nuestro caso) y ejecutamos en la terminal el comando:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para ver nuestro sitio web, nos vamos a un navegador, escribimos localhost:1313 y ya podremos visualzar nuestro sitio web en local.&lt;/p&gt;
+
+&lt;p&gt;Cuando modifiquemos cualquiera de los archivos de nuestro proyecto, Hugo lo detectará y reconstruirá el sitio web de forma dinámica, ahorrandonos así tener que reiniciar el servicio y agilizando nuestro entorno de desarrollo local.&lt;/p&gt;
 
 &lt;h2 id=&#34;subida-del-proyecto-a-github-pages&#34;&gt;Subida del proyecto a Github Pages&lt;/h2&gt;
+
+&lt;p&gt;Una vez que nuestro proyecto este terminado, podemos utilizar el servicio &lt;a href=&#34;https://pages.github.com&#34; target=&#34;_blank&#34;&gt;Github Pages&lt;/a&gt;, el cual nos proporcionara un dominio público a través del cual podremos acceder a nuestro sitio web siempre que lo deseemos.&lt;/p&gt;
+
+&lt;p&gt;Sería el equivalente a publicar nuestro sitio web en el servidor de producción.&lt;/p&gt;
+
+&lt;p&gt;Lo primero que debemos hacer es editar el fichero de configuración &lt;strong&gt;config.toml&lt;/strong&gt; añadiendo la siguiente línea de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;publishDir = &amp;quot;docs&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lo que hemos hecho con la anterior línea de código es especificar a Hugo que genere la versión web de nuestro proyecto en un directorio llamado &amp;ldquo;docs&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Para generar nuestro proyecto de forma que podamos subirlo como un sitio web funcional a Github Pages, utilizaremos el comando:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo --theme=hugo-coder
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;El comando debe igualarse al nombre del directorio en el que se situa el tema, en este caso &lt;i&gt;hugo-coder&lt;/i&gt;.&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Esto creará un directorio llamado /docs dentro del directorio de nuestro proyecto con el contenido de nuestro sitio web en lenguajes como HTML, CSS o JSON, de manera que podamos subirlo a un repositorio y que github lo sirva como un sitio web accesible a través de un dominio público.&lt;/p&gt;
+
+&lt;p&gt;Además vamos a añadir al .gitignore la siguiente línea de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;/themes/&amp;quot; &amp;gt;&amp;gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De esta forma no se subirá el directorio /themes, para evitar conflictos.&lt;/p&gt;
+
+&lt;p&gt;El siguiente paso es ir a github y crear un repositorio.&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;No crear README para evitar posibles conflictos.&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;En nuestro caso vamos a crear un repositorio llamado &lt;strong&gt;prueba&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Una vez creemos este repositorio, es importante que nos quedemos con su URL ya que será necesaria para indicar el respositorio donde realizar la subida, en mi caso:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/casaar97/prueba.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nos situamos ahora con la terminal en el directorio de nuestro proyecto y ejecutamos los siguientes comandos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status
+git add .
+git commit -m &amp;quot;Primera subida&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lo que hemos hecho con estos 3 comandos es basicamente hacer un primer commit de todos los ficheros del directorio del proyecto.&lt;/p&gt;
+
+&lt;p&gt;Una vez hecho esto, procederemos a su subida mediante los siguientes comandos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add origin https://github.com/casaar97/prueba.git
+git remote -v (Verificamos la subida)
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Una vez subido el repositorio, accedemos a las opciones del repositorio, e indicamos dentro de la sección Github Pages, en la opción &lt;strong&gt;Source&lt;/strong&gt;, la segunda opción: &lt;strong&gt;master brach /docs folder&lt;/strong&gt; para así indicar el directorio en el que se ha generado nuestro sitio web.&lt;/p&gt;
+
+&lt;p&gt;Si queremos hacer modificaciones, lo suyo es probarlas primero en local (Hugo Server y localhost:1313) y una vez comprobado que funcionan correctamente, generar de nuevo el directorio /docs y realizar una nueva subida mediante los siguientes comandos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo --theme=hugo-coder
+git add .
+git commit -m &amp;quot;Mensaje&amp;quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

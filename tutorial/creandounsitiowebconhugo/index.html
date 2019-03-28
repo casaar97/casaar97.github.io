@@ -551,7 +551,7 @@ git init
 
 <p>En caso de querer descargar un tema en concreto y una vez localizado el tema que queremos utilizar, usamos el comando git clone.</p>
 
-<p>En nuestro caso vamos a descargar el tema &ldquo;<a href="https://themes.gohugo.io/minimal-academic/" target="_blank">Minimal Academic</a>&ldquo;</p>
+<p>En nuestro caso vamos a descargar el tema &ldquo;<a href="https://themes.gohugo.io/hugo-coder/" target="_blank">Coder</a>&rdquo; añadiéndolo como un submódulo a nuestro proyecto:</p>
 
 <div class="alert alert-note">
   <div>
@@ -562,23 +562,24 @@ git init
 
 
 <pre><code>cd themes
-git clone https://github.com/jhu247/minimal-academic.git
+git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
 </code></pre>
 
-<p>Otra opción es añadir el tema como un submódulo de nuestro proyecto:</p>
+<p>Otra opción es clonar el tema:</p>
 
 <pre><code>git init (En caso de no haberlo hecho anteriormente)
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+git clone https://github.com/jhu247/minimal-academic.git
+echo 'theme = &quot;minimal-academic&quot;' &gt;&gt; config.toml
 </code></pre>
 
-<p>Las instrucciones para descargar el tema suelen estar en la parte inferior de la página del tema, concretamente en la sección &ldquo;Getting started&rdquo;.</p>
+<p>Las instrucciones para descargar el tema suelen estar en la parte inferior de la página principal del tema, concretamente en la sección &ldquo;Getting started&rdquo;.</p>
 
 <p>Los temas contienen un subdirectorio, llamado <strong>exampleSite</strong>, con un sitio web de ejemplo realizado con dicho tema, el cual podemos usar de base para realizar nuestro proyecto.</p>
 
-<p>Para ver su funcionamiento, vamos a copiar los 2 subdirectorios y el fichero de configuración que encontramos en dicho directorio:</p>
+<p>Para ver su funcionamiento, vamos a copiar los 3 subdirectorios y el fichero de configuración que encontramos en dicho directorio:</p>
 
 <ul>
+<li>layouts</li>
 <li>content</li>
 <li>static</li>
 <li>config.toml</li>
@@ -610,8 +611,16 @@ echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
 
 <p>Para generar nuestro proyecto de forma que podamos subirlo como un sitio web funcional a Github Pages, utilizaremos el comando:</p>
 
-<pre><code>hugo --theme=minimal-academic
+<pre><code>hugo --theme=hugo-coder
 </code></pre>
+
+<div class="alert alert-note">
+  <div>
+    <p>El comando debe igualarse al nombre del directorio en el que se situa el tema, en este caso <i>hugo-coder</i>.</p>
+
+  </div>
+</div>
+
 
 <p>Esto creará un directorio llamado /docs dentro del directorio de nuestro proyecto con el contenido de nuestro sitio web en lenguajes como HTML, CSS o JSON, de manera que podamos subirlo a un repositorio y que github lo sirva como un sitio web accesible a través de un dominio público.</p>
 
@@ -659,7 +668,7 @@ git push -u origin master
 
 <p>Si queremos hacer modificaciones, lo suyo es probarlas primero en local (Hugo Server y localhost:1313) y una vez comprobado que funcionan correctamente, generar de nuevo el directorio /docs y realizar una nueva subida mediante los siguientes comandos:</p>
 
-<pre><code>hugo --theme=minimal-academic
+<pre><code>hugo --theme=hugo-coder
 git add .
 git commit -m &quot;Mensaje&quot;
 git push origin master
