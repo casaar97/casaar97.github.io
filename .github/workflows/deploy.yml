@@ -17,12 +17,25 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install and Build
+    - name: Install Dependencies
       run: |
         npm ci
-        npm run build
-        npm run export
-        touch out/.nojekyll
+      continue-on-error: true
+
+    - name: Debug npm
+      run: |
+        npm list
+        cat package.json
+        npm version
+
+    - name: Build
+      run: npm run build
+
+    - name: Export
+      run: npm run export
+
+    - name: Touch .nojekyll
+      run: touch out/.nojekyll
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.5
