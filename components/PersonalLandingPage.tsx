@@ -76,10 +76,10 @@ export default function PersonalLandingPage() {
         className="h-screen flex flex-col justify-center items-center text-center p-4"
       >
         <h1 className="text-5xl font-bold mb-4">
-          Hi, I'm <span className="text-cyan-400">Your Name</span>
+          Hi, I'm <span className="text-cyan-400">Carlos</span>
         </h1>
         <h2 className="text-2xl mb-8">
-          <TypewriterEffect text="A Full Stack Developer" />
+          <TypewriterEffect text="A Data Software Engineer" />
         </h2>
         <motion.div
           whileHover={{ scale: 1.1 }}
