@@ -1,0 +1,445 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a202c;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    color: #a0aec0;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: #f0f4f8;
+}
+
+.cta-button {
+    background-color: #f0f4f8;
+    color: #1a202c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background-color: #e2e8f0;
+}
+
+/* About Me Section */
+.about {
+    padding: 5rem 0;
+}
+
+.about h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-content p {
+    color: #a0aec0;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Experience Section */
+.experience {
+    padding: 5rem 0;
+    background-color: #2d3748;
+}
+
+.experience h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f0f4f8;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #f0f4f8;
+    transform: translateX(-50%);
+}
+
+.job {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #4a5568;
+    border-radius: 0.5rem;
+    width: calc(50% - 2rem);
+    transition: transform 0.3s;
+}
+
+.job:nth-child(odd) {
+    left: 0;
+}
+
+.job:nth-child(even) {
+    left: 50%;
+}
+
+.job::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #f0f4f8;
+    border-radius: 50%;
+}
+
+.job:nth-child(odd)::before {
+    right: -1.5rem;
+}
+
+.job:nth-child(even)::before {
+    left: -1.5rem;
+}
+
+.job:hover {
+    transform: scale(1.05);
+}
+
+.job h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #f0f4f8;
+}
+
+.job .company {
+    font-weight: bold;
+    color: #a0aec0;
+    margin-bottom: 0.25rem;
+}
+
+.job .date {
+    color: #a0aec0;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.job .description {
+    color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 0;
+    }
+
+    .job {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .job::before {
+        left: -1.5rem !important;
+    }
+}
+
+/* Education Section */
+.education {
+    padding: 5rem 0;
+    background-color: #1a202c; /* Same as body background */
+}
+
+.education h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f0f4f8;
+}
+
+.education-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #f0f4f8;
+    transform: translateX(-50%);
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #2d3748; /* Lighter than body background */
+    border-radius: 0.5rem;
+    width: calc(50% - 2rem);
+    transition: transform 0.3s;
+}
+
+.education-item:nth-child(odd) {
+    left: 0;
+}
+
+.education-item:nth-child(even) {
+    left: 50%;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #f0f4f8;
+    border-radius: 50%;
+}
+
+.education-item:nth-child(odd)::before {
+    right: -1.5rem;
+}
+
+.education-item:nth-child(even)::before {
+    left: -1.5rem;
+}
+
+.education-item:hover {
+    transform: scale(1.05);
+}
+
+.education-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #f0f4f8;
+}
+
+.education-item .institution {
+    font-weight: bold;
+    color: #a0aec0;
+}
+
+.education-item .degree {
+    font-style: italic;
+    color: #a0aec0;
+}
+
+.education-item .date {
+    color: #a0aec0;
+    margin-bottom: 0.5rem;
+}
+
+.education-item .description {
+    color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+    .education-timeline::before {
+        left: 0;
+    }
+
+    .education-item {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .education-item::before {
+        left: -1.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .education-timeline::before {
+        left: 0;
+    }
+
+    .education-item {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .education-item::before {
+        left: -1.5rem !important;
+    }
+}
+
+/* Skills Section */
+.skills {
+    padding: 5rem 0;
+    background-color: #2d3748; /* Same as experience section */
+}
+
+.skills h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #f0f4f8;
+}
+
+.skill-category {
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    color: #f0f4f8;
+    margin-bottom: 1rem;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.skill {
+    background-color: #4a5568; /* Same as job items in experience section */
+    border-radius: 0.5rem;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 0.75rem;
+    text-align: center;
+    color: #e2e8f0;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    background-color: #f0f4f8;
+    color: #1a202c;
+}
+
+@media (max-width: 768px) {
+    .skill-category h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2d3748;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: #a0aec0;
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+.social-links a:nth-child(1):hover {
+    color: #2ecc71;
+}
+
+.social-links a:nth-child(2):hover {
+    color: #3498db;
+}
+
+.social-links a:nth-child(3):hover {
+    color: #1da1f2;
+}
+
+.social-links a:nth-child(4):hover {
+    color: #00ab6c;
+}
+
+footer p {
+    color: #a0aec0;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
+    }
+
+    .about h2, .experience h2, .skills h2 {
+        font-size: 1.75rem;
+    }
+
+    .job h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill-category h3 {
+        font-size: 1.25rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .job {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .job::before {
+        left: -1.5rem !important;
+    }
+}
