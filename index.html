@@ -4,24 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Sánchez Arribas - Personal Landing Page</title>
+    <meta name="description" content="Carlos Sánchez Arribas — Data Software Engineer based in Málaga, Spain.">
+    <title>Carlos Sánchez Arribas — Data Software Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23FF5C00'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
+    <header class="site-header">
+        <nav class="nav">
+            <a href="#" class="nav-brand">Carlos Sánchez Arribas</a>
+            <div class="nav-links">
+                <a href="https://github.com/casaar97" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/casaar97" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:infsaarc@gmail.com">Email</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Hi, I'm <span class="highlight">Carlos Sánchez Arribas</span></h1>
-            <h2>A Data Software Engineer</h2>
-            <a href="mailto:infsaarc@gmail.com" class="cta-button">Get in touch</a>
+            <p class="hero-eyebrow">Hi, I'm</p>
+            <h1>Carlos Sánchez Arribas<span class="accent">.</span></h1>
+            <p class="hero-role">Data Software Engineer based in Málaga, Spain — building robust data pipelines and the platforms around them.</p>
+            <a href="mailto:infsaarc@gmail.com" class="cta-link">Get in touch <span class="arrow">&rarr;</span></a>
         </section>
 
         <!-- About Me Section -->
-
         <section class="about">
-            <h2>About Me</h2>
+            <h2 class="section-title"><span class="section-number">01</span>About</h2>
             <div class="about-content">
                 <p>Hello! I'm a dedicated Data Software Engineer based in Málaga, Andalusia, Spain. With a solid
                     foundation in both software engineering and data technologies, I am passionate about crafting
@@ -44,143 +59,160 @@
 
         <!-- Experience Section -->
         <section class="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="job">
-                    <h3>Data Software Engineer</h3>
-                    <p class="company">The Workshop</p>
-                    <p class="date">2024 - Present</p>
-                    <p class="description"> Developing optimized and robust data pipelines in order to provide
+            <h2 class="section-title"><span class="section-number">02</span>Experience</h2>
+            <div class="entry-list">
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Data Engineer &mdash; Platform</h3>
+                        <span class="date">2025 — Present</span>
+                    </div>
+                    <p class="entry-subtitle">Cabify</p>
+                    <p class="entry-description">Building and maintaining the data platform infrastructure that powers
+                        analytics, machine learning, and operational data products across the company.</p>
+                </article>
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Senior Data Engineer</h3>
+                        <span class="date">2025</span>
+                    </div>
+                    <p class="entry-subtitle">Quantexa</p>
+                    <p class="entry-description">Designed and built data processing solutions on top of Quantexa's
+                        entity resolution and analytics platform to deliver connected data insights for clients.</p>
+                </article>
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Data Software Engineer</h3>
+                        <span class="date">2024 — 2025</span>
+                    </div>
+                    <p class="entry-subtitle">The Workshop</p>
+                    <p class="entry-description">Developing optimized and robust data pipelines in order to provide
                         high-quality datasets to our Data Analyst.</p>
-                </div>
-                <div class="job">
-                    <h3>Data Analytics Engineer</h3>
-                    <p class="company">The Workshop</p>
-                    <p class="date">2023 - 2024</p>
-                    <p class="description">Worked on providing and maintaining high-quality, trusted datasets for
+                </article>
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Data Analytics Engineer</h3>
+                        <span class="date">2023 — 2024</span>
+                    </div>
+                    <p class="entry-subtitle">The Workshop</p>
+                    <p class="entry-description">Worked on providing and maintaining high-quality, trusted datasets for
                         our Analysts, acting as the bridge between new or unstructured data sources and our Analytics
                         team.</p>
-                </div>
-                <div class="job">
-                    <h3>Software Engineer</h3>
-                    <p class="company">The Workshop</p>
-                    <p class="date">2022 - 2023</p>
-                    <p class="description">Worked on monitoring, maintaining and developing microservices of the sites
-                        CMS and their infrastructure.</p>
-                </div>
-                <div class="job">
-                    <h3>Analyst Software Engineer</h3>
-                    <p class="company">Version 1</p>
-                    <p class="date">2021 - 2022</p>
-                    <p class="description">Worked on a project to create a trading web application for a metal trading
-                        company as a Data Analyst and Python Backend Developer.</p>
-                </div>
+                </article>
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Software Engineer</h3>
+                        <span class="date">2022 — 2023</span>
+                    </div>
+                    <p class="entry-subtitle">The Workshop</p>
+                    <p class="entry-description">Worked on monitoring, maintaining and developing microservices of the
+                        sites CMS and their infrastructure.</p>
+                </article>
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Analyst Software Engineer</h3>
+                        <span class="date">2021 — 2022</span>
+                    </div>
+                    <p class="entry-subtitle">Version 1</p>
+                    <p class="entry-description">Worked on a project to create a trading web application for a metal
+                        trading company as a Data Analyst and Python Backend Developer.</p>
+                </article>
             </div>
         </section>
 
         <!-- Education Section -->
         <section class="education">
-            <h2>Education</h2>
-            <div class="education-timeline">
-                <div class="education-item">
-                    <h3>Master's Degree</h3>
-                    <p class="institution">Universidad de Málaga</p>
-                    <p class="degree">Big Data Analytics</p>
-                    <p class="date">2020 - 2022</p>
-                    <p class="description">Specialized in Big Data and analytics technologies, Machine Learning and
-                        Artificial Intelligence.</p>
-                </div>
-                <div class="education-item">
-                    <h3>Bachelor's Degree</h3>
-                    <p class="institution">Universidad de Córdoba</p>
-                    <p class="degree">Computer Science</p>
-                    <p class="date">2015 - 2020</p>
-                    <p class="description">Specialized in Software Engineering.</p>
-                </div>
+            <h2 class="section-title"><span class="section-number">03</span>Education</h2>
+            <div class="entry-list">
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Master's Degree, Big Data Analytics</h3>
+                        <span class="date">2020 — 2022</span>
+                    </div>
+                    <p class="entry-subtitle">Universidad de Málaga</p>
+                    <p class="entry-description">Specialized in Big Data and analytics technologies, Machine Learning
+                        and Artificial Intelligence.</p>
+                </article>
+                <article class="entry">
+                    <div class="entry-header">
+                        <h3>Bachelor's Degree, Computer Science</h3>
+                        <span class="date">2015 — 2020</span>
+                    </div>
+                    <p class="entry-subtitle">Universidad de Córdoba</p>
+                    <p class="entry-description">Specialized in Software Engineering.</p>
+                </article>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section class="skills">
-            <h2>Skills</h2>
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <div class="skill-grid">
-                    <div class="skill">Communication</div>
-                    <div class="skill">Teamwork</div>
-                    <div class="skill">Problem Solving</div>
-                    <div class="skill">Adaptability</div>
-                    <div class="skill">Time Management</div>
-                    <div class="skill">Leadership</div>
+            <h2 class="section-title"><span class="section-number">04</span>Skills</h2>
+            <div class="skill-list">
+                <div class="skill-row">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Adaptability</li>
+                        <li>Time Management</li>
+                        <li>Leadership</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <div class="skill-grid">
-                    <div class="skill">Python</div>
-                    <div class="skill">Java</div>
+                <div class="skill-row">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Technologies</h3>
-                <div class="skill-grid">
-                    <div class="skill">Apache Iceberg</div>
-                    <div class="skill">Apache Impala</div>
-                    <div class="skill">Apache Spark</div>
-                    <div class="skill">Apache Kafka</div>
-                    <div class="skill">Apache Arrow</div>
-                    <div class="skill">Apache Parquet</div>
-                    <div class="skill">HDFS</div>
-                    <div class="skill">Kubernetes</div>
-                    <div class="skill">Grafana</div>
+                <div class="skill-row">
+                    <h3>Technologies</h3>
+                    <ul>
+                        <li>Apache Iceberg</li>
+                        <li>Apache Impala</li>
+                        <li>Apache Spark</li>
+                        <li>Apache Kafka</li>
+                        <li>Apache Arrow</li>
+                        <li>Apache Parquet</li>
+                        <li>HDFS</li>
+                        <li>Kubernetes</li>
+                        <li>Grafana</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Analytics</h3>
-                <div class="skill-grid">
-                    <div class="skill">SQL</div>
+                <div class="skill-row">
+                    <h3>Analytics</h3>
+                    <ul>
+                        <li>SQL</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Certifications</h3>
-                <div class="skill-grid">
-                    <div class="skill">AWS Solutions Architect - Associate</div>
-                    <div class="skill">NVIDIA DLI Certificate - Fundamentals of Deep Learning</div>
+                <div class="skill-row">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>AWS Solutions Architect — Associate</li>
+                        <li>NVIDIA DLI — Fundamentals of Deep Learning</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <div class="skill-grid">
-                    <div class="skill">Spanish (Native)</div>
-                    <div class="skill">English (Cambridge - C1)</div>
+                <div class="skill-row">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Spanish (Native)</li>
+                        <li>English (Cambridge C1)</li>
+                    </ul>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- Footer -->
-        <footer>
-            <div class="social-links">
-                <a href="https://github.com/casaar97" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/casaar97" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://twitter.com/casaar97" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://medium.com/@casaar97" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-medium"></i>
-                </a>
-            </div>
-            <p>&copy; 2023 Carlos Sánchez Arribas. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/casaar97" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow">&#8599;</span></a>
+            <a href="https://linkedin.com/in/casaar97" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow">&#8599;</span></a>
+            <a href="https://twitter.com/casaar97" target="_blank" rel="noopener noreferrer">Twitter <span class="arrow">&#8599;</span></a>
+            <a href="https://medium.com/@casaar97" target="_blank" rel="noopener noreferrer">Medium <span class="arrow">&#8599;</span></a>
+        </div>
+        <p>&copy; 2026 Carlos Sánchez Arribas</p>
+    </footer>
 </body>
 
 </html>
