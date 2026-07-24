@@ -1,0 +1,384 @@
+/* ============================================
+   Gym Routine — Carlos Sánchez
+   Brand: white / black / signal orange #FF5C00
+   ============================================ */
+
+:root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --fg: #111111;
+    --muted: #6f6f6f;
+    --accent: #ff5c00;
+    --border: #e8e8e8;
+    --radius: 8px;
+    --mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+a {
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* ---------- Header / Nav ---------- */
+
+.gym-header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.gym-nav {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back-link {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.gym-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.gym-hero {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2.5rem;
+}
+
+.gym-hero h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.5rem;
+}
+
+.gym-subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--fg);
+}
+
+.stat-divider {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+/* ---------- Main layout ---------- */
+
+.gym-main {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+}
+
+/* ---------- Scheme box ---------- */
+
+.scheme-box {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0 2.5rem;
+}
+
+.scheme-box h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 1rem;
+}
+
+.scheme-grid {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.scheme-item {
+    font-size: 0.85rem;
+    color: #3d3d3d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scheme-reps {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    font-family: var(--mono);
+}
+
+.scheme-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0.75rem 0 0;
+}
+
+/* ---------- Day sections ---------- */
+
+.day {
+    margin-bottom: 2rem;
+}
+
+.day-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.day-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.day-name {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.day-focus {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.day.rest .day-header {
+    opacity: 0.5;
+}
+
+/* ---------- Tables ---------- */
+
+.table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 0.925rem;
+}
+
+thead {
+    background-color: var(--fg);
+    color: var(--surface);
+}
+
+thead th {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+tbody + tbody {
+    border-top: 1px solid var(--border);
+}
+
+tbody td {
+    padding: 0.85rem 1rem;
+    vertical-align: top;
+    color: #3d3d3d;
+}
+
+tbody tr + tr td {
+    padding-top: 0.25rem;
+    padding-bottom: 0.6rem;
+}
+
+td:empty {
+    min-height: 1.4em;
+}
+
+.col-num {
+    width: 6rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+thead .col-num {
+    color: var(--surface);
+}
+
+.col-series {
+    width: 6rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.num {
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--fg);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.or {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* ---------- Tags ---------- */
+
+.tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.tag-cardio {
+    background-color: #fff0e6;
+    color: var(--accent);
+}
+
+.tag-core {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+/* ---------- Final block ---------- */
+
+.final-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+}
+
+/* ---------- Footer ---------- */
+
+.gym-footer {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.gym-footer a {
+    color: var(--muted);
+}
+
+.gym-footer a:hover {
+    color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+    .gym-hero {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .gym-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .scheme-grid {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    thead th,
+    tbody td {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .col-series {
+        width: 5rem;
+        font-size: 0.8rem;
+    }
+}
