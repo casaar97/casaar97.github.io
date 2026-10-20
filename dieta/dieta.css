@@ -1,0 +1,540 @@
+/* ============================================
+   Dieta Semanal — Carlos Sánchez
+   Brand: white / black / signal orange #FF5C00
+   ============================================ */
+
+:root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --fg: #111111;
+    --muted: #6f6f6f;
+    --accent: #ff5c00;
+    --border: #e8e8e8;
+    --radius: 8px;
+    --mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+a {
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* ---------- Header / Nav ---------- */
+
+.diet-header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.diet-nav {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back-link {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.diet-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.diet-hero {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2.5rem;
+}
+
+.diet-hero h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.5rem;
+}
+
+.diet-subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--fg);
+}
+
+.stat-divider {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+/* ---------- Main layout ---------- */
+
+.diet-main {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+}
+
+/* ---------- Regla del plato ---------- */
+
+.rules-box {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0 2.5rem;
+}
+
+.rules-box h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 1rem;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.rule-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.rule-percent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: #ffffff;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.rule-detail {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.rules-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 1rem 0 0;
+}
+
+/* ---------- Day sections ---------- */
+
+.day {
+    margin-bottom: 2rem;
+}
+
+.day-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.day-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.day-name {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.kcal-badge {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 1px 10px;
+}
+
+/* ---------- Tables ---------- */
+
+.table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 0.925rem;
+}
+
+tbody + tbody {
+    border-top: 1px solid var(--border);
+}
+
+tbody tr + tr {
+    border-top: 1px solid var(--border);
+}
+
+tbody td {
+    padding: 0.8rem 1rem;
+    vertical-align: top;
+    color: #3d3d3d;
+}
+
+.col-meal {
+    width: 8.5rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+/* ---------- Blocks ---------- */
+
+.block {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+}
+
+.block-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem;
+}
+
+.block-number {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+/* ---------- Shopping list ---------- */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.shop-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+}
+
+.shop-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.75rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+.dot-dairy {
+    background-color: #c9c9c9;
+}
+
+.dot-carb {
+    background-color: #1a73e8;
+}
+
+.dot-veg {
+    background-color: #2e9e5b;
+}
+
+.dot-fat {
+    background-color: #d4a017;
+}
+
+.dot-fruit {
+    background-color: #d6336c;
+}
+
+.chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.chips li {
+    font-size: 0.8rem;
+    color: #3d3d3d;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 1px 9px;
+}
+
+/* ---------- Traps ---------- */
+
+.traps {
+    list-style: none;
+    counter-reset: trap;
+    margin: 0;
+    padding: 0;
+}
+
+.traps li {
+    counter-increment: trap;
+    position: relative;
+    padding: 0.9rem 0 0.9rem 3rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.925rem;
+    color: #3d3d3d;
+}
+
+.traps li:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.traps li::before {
+    content: counter(trap, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.traps strong {
+    color: var(--fg);
+}
+
+/* ---------- Tips ---------- */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tip {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+}
+
+.tip h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+}
+
+.tip p {
+    font-size: 0.875rem;
+    color: #3d3d3d;
+    margin: 0;
+}
+
+/* ---------- Note ---------- */
+
+.note-box {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--accent);
+    background-color: #fff6f0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.note-box p {
+    font-size: 0.85rem;
+    color: #3d3d3d;
+    margin: 0;
+}
+
+.note-box strong {
+    color: var(--fg);
+}
+
+/* ---------- Footer ---------- */
+
+.diet-footer {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.diet-footer a {
+    color: var(--muted);
+}
+
+.diet-footer a:hover {
+    color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+    .rules-grid,
+    .shop-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rules-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .diet-hero {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .diet-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .rules-box {
+        padding: 1.25rem;
+    }
+
+    .shop-card,
+    .tip {
+        padding: 1rem 1.25rem;
+    }
+
+    table {
+        font-size: 0.875rem;
+    }
+
+    tbody td {
+        padding: 0.65rem 0.75rem;
+    }
+
+    .col-meal {
+        width: 6.5rem;
+        font-size: 0.65rem;
+    }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+    .diet-nav,
+    .diet-footer {
+        display: none;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    .day {
+        break-inside: avoid;
+    }
+
+    .shop-card,
+    .tip,
+    table {
+        break-inside: avoid;
+    }
+}
