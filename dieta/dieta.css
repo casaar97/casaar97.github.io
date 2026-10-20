@@ -1,6 +1,6 @@
 /* ============================================
    Dieta Semanal — Carlos Sánchez
-   Brand: white / black / signal orange #FF5C00
+   Brand: white / black / soft green #4C9E72
    ============================================ */
 
 :root {
@@ -8,7 +8,7 @@
     --surface: #ffffff;
     --fg: #111111;
     --muted: #6f6f6f;
-    --accent: #ff5c00;
+    --accent: #4c9e72;
     --border: #e8e8e8;
     --radius: 8px;
     --mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
@@ -436,7 +436,7 @@ tbody td {
     margin-top: 2.5rem;
     padding: 1.25rem 1.5rem;
     border-left: 3px solid var(--accent);
-    background-color: #fff6f0;
+    background-color: #f0f8f2;
     border-radius: 0 var(--radius) var(--radius) 0;
 }
 
