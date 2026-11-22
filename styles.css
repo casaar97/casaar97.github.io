@@ -344,6 +344,7 @@ footer {
 .social-links {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.5rem 1.75rem;
     margin-bottom: 1.25rem;
 }
@@ -387,6 +388,14 @@ footer {
 .social-links .icon-medium {
     width: 15.9px;
     height: 9.1px;
+}
+
+/* Icon-only link (X): the glyph is the label, so give it an equal tap target
+   without changing the visual rhythm of the row. */
+.social-links a.icon-only {
+    padding: 0.3rem;
+    margin: -0.3rem;
+    border-radius: 4px;
 }
 
 footer p {
