@@ -349,17 +349,24 @@ footer {
 }
 
 .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--fg);
+    transition: color 0.15s ease;
 }
 
 .social-links a:hover {
     color: var(--accent);
 }
 
-.social-links .arrow {
-    font-size: 0.8em;
+.social-links .icon {
+    width: 1.05em;
+    height: 1.05em;
+    flex: none;
+    fill: currentColor;
 }
 
 footer p {
