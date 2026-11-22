@@ -351,7 +351,7 @@ footer {
 .social-links a {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.4rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--fg);
@@ -362,11 +362,31 @@ footer {
     color: var(--accent);
 }
 
+/* Small, optically balanced marks: each viewBox is cropped to its glyph,
+   so these sizes equalise apparent size rather than raw bounding boxes. */
 .social-links .icon {
-    width: 1.05em;
-    height: 1.05em;
     flex: none;
     fill: currentColor;
+}
+
+.social-links .icon-github {
+    width: 12.3px;
+    height: 12px;
+}
+
+.social-links .icon-linkedin {
+    width: 11.5px;
+    height: 11.5px;
+}
+
+.social-links .icon-x {
+    width: 12.6px;
+    height: 11.4px;
+}
+
+.social-links .icon-medium {
+    width: 15.9px;
+    height: 9.1px;
 }
 
 footer p {
